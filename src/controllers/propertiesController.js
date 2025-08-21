@@ -1,3 +1,4 @@
+import crypto from 'crypto';
 import { db } from '../db.js';
 import {
   checkForDuplicateProperty,
@@ -13,7 +14,7 @@ function addProperty(req, res) {
     return res.status(400).json({ message: 'Property already exists' });
   }
 
-  db.properties.push({ ...newProperty, id: db.properties.length + 1 });
+  db.properties.push({ ...newProperty, id: crypto.randomUUID() });
   res.status(201).json({ message: 'Property added successfully', newProperty });
 }
 
