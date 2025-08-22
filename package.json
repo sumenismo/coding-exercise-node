@@ -6,12 +6,18 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node --env-file=.env src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test"
   },
   "author": "Selmer del Rosario",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0",
     "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "node-mocks-http": "^1.17.2"
+  },
+  "engines": {
+    "node": "22.x"
   }
 }
